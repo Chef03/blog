@@ -1,0 +1,26 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Chef</title>
+        <link>localhost/posts/</link>
+        <description>Recent content in Posts on Chef</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Mon, 15 May 2023 01:25:24 +0200</lastBuildDate>
+        <atom:link href="localhost/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Hello World</title>
+            <link>localhost/posts/initial-post/</link>
+            <pubDate>Mon, 15 May 2023 01:25:24 +0200</pubDate>
+            
+            <guid>localhost/posts/initial-post/</guid>
+            <description>Overview This is a test post for my upcoming blog site that I will be updating regularly</description>
+            <content type="html"><![CDATA[<p><img src="https://media.tenor.com/Ey2wR2sNPjwAAAAM/excited-im.gif" alt="Hello" title="Hello"></p>
+<h2 id="overview">Overview</h2>
+<p>This is a <strong>test</strong> post for my upcoming blog site that I will be updating regularly</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
