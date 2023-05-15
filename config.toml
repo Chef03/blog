@@ -42,7 +42,6 @@ paginate     = 10
 
     [languages.en.params.logo]
       logoText = "Chef"
-      logoHomeLink = "/"
       logoCursorColor = "grey"
     # or
     #
