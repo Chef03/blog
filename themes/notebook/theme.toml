@@ -1,0 +1,4 @@
+name = 'Notebook'
+license = 'MIT'
+description = 'A minimal sidebar and year-grouped archive, inspired by McLuhan.'
+min_version = '0.158.0'

@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <header class="introduction">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  </header>
+  {{ partial "archive.html" . }}
+{{ end }}

@@ -1,0 +1,5 @@
+<div class="enemy-backdrop" aria-hidden="true">
+  {{ range slice "flower-grunt" "acorn" "mushroom" "blob-runner" "lobber" }}
+    <img class="enemy-{{ . }}" src="{{ printf "images/enemies/%s.png" . | relURL }}" alt="" decoding="async">
+  {{ end }}
+</div>

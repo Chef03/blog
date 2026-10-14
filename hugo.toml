@@ -1,0 +1,48 @@
+baseURL = 'https://chef03.github.io/blog/'
+locale = 'en-US'
+title = 'Mohamad Khalil'
+theme = 'notebook'
+disableKinds = ['taxonomy', 'term']
+
+# No tag or category pages are generated.
+[taxonomies]
+
+[params]
+  description = 'CS student and developer'
+  math = true
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 20
+
+[markup.goldmark.extensions]
+  table = true
+  strikethrough = true
+  taskList = true
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block = [['\[', '\]'], ['$$', '$$']]
+      inline = [['\(', '\)'], ['$', '$']]
+
+[markup.highlight]
+  style = 'github'
+  tabWidth = 4
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+  ordered = false
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+
+[privacy.youTube]
+  privacyEnhanced = true

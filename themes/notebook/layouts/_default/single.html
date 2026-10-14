@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <article>
+    {{ with .Params.cover }}
+      <img class="article-cover" src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Params.coverAlt | default $.Title }}" fetchpriority="high" decoding="async">
+    {{ end }}
+    <header class="article-header">
+      {{ if eq .Section "posts" }}
+        <p class="eyebrow"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+      {{ end }}
+      <h1 class="page-title">{{ .Title }}</h1>
+    </header>
+    {{ if and (eq .Section "posts") (ne .Params.toc false) (strings.Contains .TableOfContents "<a ") }}
+      <details class="article-toc">
+        <summary id="contents-label">Table of contents</summary>
+        <div aria-labelledby="contents-label">{{ .TableOfContents }}</div>
+      </details>
+      <script>
+        (() => {
+          const toc = document.querySelector('.article-toc');
+          toc.addEventListener('click', (event) => {
+            if (event.target.closest('a')) toc.open = false;
+          });
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && toc.open) {
+              toc.open = false;
+              toc.querySelector('summary').focus();
+            }
+          });
+        })();
+      </script>
+    {{ end }}
+    <div class="prose" id="article-content">{{ .Content }}</div>
+  </article>
+  {{ if eq .Section "posts" }}<a class="back-link" href="{{ site.Home.RelPermalink }}">← All posts</a>{{ end }}
+{{ end }}

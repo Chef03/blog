@@ -1,0 +1,20 @@
+<div class="archive" aria-label="Blog posts">
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ range $posts.GroupByDate "2006" }}
+    <section class="archive-year" aria-labelledby="year-{{ .Key }}">
+      <h2 id="year-{{ .Key }}">{{ .Key }}</h2>
+      <ul class="post-list">
+        {{ range .Pages }}
+          <li>
+            <a class="post-link" href="{{ .RelPermalink }}">
+              <span class="post-title">{{ .Title }}</span>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan" }}</time>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ else }}
+    <p class="empty-state">No posts yet. Check back soon.</p>
+  {{ end }}
+</div>

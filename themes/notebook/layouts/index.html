@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <header class="introduction">
+    <h1 class="eyebrow">{{ .Params.introLabel | default "Introduction" }}</h1>
+    <div class="intro-copy">{{ .Content }}</div>
+  </header>
+  {{ partial "archive.html" . }}
+{{ end }}
