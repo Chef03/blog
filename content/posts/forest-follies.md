@@ -4,6 +4,8 @@ date: '2026-10-12T09:00:00+02:00'
 description: 'A small beginning, and a place to keep the things worth remembering.'
 cover: '/images/cover.png'
 coverAlt: 'Cuphead shooting at enemies in Forest Follies.'
+icon: '/images/cuphead-face.png'
+favicon: '/images/cuphead-face.png'
 enemyBackground: true
 ---
 

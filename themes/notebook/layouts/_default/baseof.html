@@ -7,7 +7,11 @@
   <meta name="description" content="{{ .Description | default site.Params.description }}">
   <link rel="canonical" href="{{ .Permalink }}">
   {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .RelPermalink }}">{{ end }}
+  {{ with .Params.favicon }}
+  <link rel="icon" href="{{ strings.TrimPrefix "/" . | relURL }}" type="image/png">
+  {{ else }}
   <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  {{ end }}
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
   {{ if and (not .IsHome) (.Param "math") }}{{ partial "math.html" . }}{{ end }}
@@ -19,8 +23,11 @@
   <main id="main" class="site-main" tabindex="-1">
     <div class="main-inner">
       {{ block "main" . }}{{ end }}
-      <footer class="site-footer">© {{ now.Year }} <a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></footer>
     </div>
+    <footer class="site-footer">
+      <p class="copyright">© {{ now.Year }} <a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></p>
+      <p class="theme-by">Theme by <a href="https://andersnoren.se/">Anders Norén</a></p>
+    </footer>
   </main>
 </body>
 </html>

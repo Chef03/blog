@@ -8,7 +8,7 @@ disableKinds = ['taxonomy', 'term']
 [taxonomies]
 
 [params]
-  description = 'CS student and developer'
+  description = 'Computer scientist, software engineer'
   math = true
 
 [menus]
